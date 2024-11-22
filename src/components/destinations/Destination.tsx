@@ -41,7 +41,7 @@ const Destination: React.FC<DestinationProps> = ({ fontType, dest }) => {
     Animated.timing(fadeAnim, {
       toValue: 1,
       duration: 400,
-      easing: Easing.inOut(Easing.cubic),
+      easing: Easing.inOut(Easing.circle),
       useNativeDriver: true,
     }).start();
   };
