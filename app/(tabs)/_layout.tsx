@@ -1,45 +1,91 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-import { Platform } from 'react-native';
+import { View, Text, StatusBar } from "react-native";
+import React from "react";
+import { Tabs } from "expo-router";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+const _layout = () => {
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
+    <>
+      <Tabs
+        screenOptions={{
+          tabBarLabelStyle: { display: "none" },
+          tabBarStyle: {
+            height: 70,
+            paddingTop: 10,
+            paddingHorizontal: 20,
+            borderTopWidth: 0, // No border on top
+            elevation: 0, // Remove shadow for Android
           },
-          default: {},
-        }),
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          headerShown: false,
         }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
-    </Tabs>
+      >
+        <Tabs.Screen
+          name="index"
+          options={{
+            tabBarIcon: ({ focused }) => {
+              return (
+                <View className=" h-16 w-16 items-center justify-center mt-3">
+                  <MaterialCommunityIcons
+                    name="home"
+                    size={33}
+                    style={{ color: focused ? "#454545" : "#c8c8c8" }}
+                  />
+                </View>
+              );
+            },
+          }}
+        />
+        <Tabs.Screen
+          name="explore"
+          options={{
+            tabBarIcon: ({ focused }) => {
+              return (
+                <View className="h-16 w-16 items-center justify-center mt-3">
+                  <MaterialCommunityIcons
+                    name="earth"
+                    size={31}
+                    style={{ color: focused ? "#454545" : "#c8c8c8" }}
+                  />
+                </View>
+              );
+            },
+          }}
+        />
+        <Tabs.Screen
+          name="booking"
+          options={{
+            tabBarIcon: ({ focused }) => {
+              return (
+                <View className="h-16 w-16 items-center justify-center mt-3">
+                  <MaterialCommunityIcons
+                    name="calendar-account-outline"
+                    size={31}
+                    style={{ color: focused ? "#454545" : "#c8c8c8" }}
+                  />
+                </View>
+              );
+            },
+          }}
+        />
+        <Tabs.Screen
+          name="profile"
+          options={{
+            tabBarIcon: ({ focused }) => {
+              return (
+                <View className="h-16 w-16 items-center justify-center mt-3">
+                  <MaterialCommunityIcons
+                    name="account"
+                    size={31}
+                    style={{ color: focused ? "#454545" : "#c8c8c8" }}
+                  />
+                </View>
+              );
+            },
+          }}
+        />
+      </Tabs>
+    </>
   );
-}
+};
+
+export default _layout;

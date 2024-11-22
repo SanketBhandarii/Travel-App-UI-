@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const explore = () => {
+const profile = () => {
   return (
     <View className='min-h-screen bg-[#f3fcfc]'>
-      <Text>explore</Text>
+      <Text>profile</Text>
     </View>
   )
 }
 
-export default explore
+export default profile
