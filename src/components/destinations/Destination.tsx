@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import React, { useEffect, useState, useRef } from "react";
 import destination from "@/data/destinations";
+import { Link } from "expo-router";
 
 interface FontType {
   bold: string;
@@ -32,7 +33,7 @@ const Destination: React.FC<DestinationProps> = ({ fontType, dest }) => {
     setReload(true);
     setTimeout(() => {
       setReload(false);
-      fadeIn(); 
+      fadeIn();
     }, 150);
   }, [dest.refreshDest]);
 
@@ -65,25 +66,27 @@ const Destination: React.FC<DestinationProps> = ({ fontType, dest }) => {
             data={destination}
             keyExtractor={(item, index) => index.toString()}
             renderItem={({ item }) => (
-              <TouchableOpacity className="mr-3 mt-4" activeOpacity={0.6}>
-                <Image
-                  source={{
-                    uri: item.imgurl,
-                  }}
-                  height={240}
-                  width={170}
-                  style={{
-                    objectFit: "cover",
-                    borderRadius: 9,
-                  }}
-                />
-                <Text
-                  style={{ fontFamily: fontType.semiBold }}
-                  className="text-center pt-1 pb-4"
-                >
-                  {item.city} ({item.country})
-                </Text>
-              </TouchableOpacity>
+              <Link href={`/listing/${item.id}`} asChild >
+                <TouchableOpacity className="mr-3 mt-4" activeOpacity={0.6}>
+                  <Image
+                    source={{
+                      uri: item.imgurl,
+                    }}
+                    height={240}
+                    width={170}
+                    style={{
+                      objectFit: "cover",
+                      borderRadius: 9,
+                    }}
+                  />
+                  <Text
+                    style={{ fontFamily: fontType.semiBold }}
+                    className="text-center pt-1 pb-4"
+                  >
+                    {item.city} ({item.country})
+                  </Text>
+                </TouchableOpacity>
+              </Link>
             )}
           />
         </Animated.View>

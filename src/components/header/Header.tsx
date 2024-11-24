@@ -2,7 +2,6 @@ import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
-
 const Header = () => {
   return (
     <View
@@ -14,16 +13,16 @@ const Header = () => {
       }}
     >
       <TouchableOpacity
-        className="bg-cyan-200 w-14 h-14 items-center justify-center rounded-lg"
-        activeOpacity={0.4}
+        className="bg-cyan-500 w-12 h-12 items-center justify-center rounded-lg shadow-lg"
+        activeOpacity={0.7}
       >
-        <MaterialCommunityIcons name="arrow-left" size={33} className="" />
+        <MaterialCommunityIcons name="arrow-left" size={28} color="white" />
       </TouchableOpacity>
       <TouchableOpacity
-        className="bg-red-200 w-14 h-14 items-center justify-center rounded-full"
-        activeOpacity={0.4}
+        className="bg-red-400 w-12 h-12 items-center justify-center rounded-full shadow-lg"
+        activeOpacity={0.7}
       >
-        <MaterialCommunityIcons name="account" size={35} />
+        <MaterialCommunityIcons name="account" size={28} color="white" />
       </TouchableOpacity>
     </View>
   );

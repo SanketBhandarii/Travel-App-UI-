@@ -10,7 +10,14 @@ export default function RootLayout() {
         barStyle="dark-content"
         hidden={false}
       />
-      <Stack>
+      <Stack
+        screenOptions={{
+          animation: "fade",
+          headerShown: false,
+          animationDuration: 1,
+          // headerShown: false,
+        }}
+      >
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       </Stack>
     </>

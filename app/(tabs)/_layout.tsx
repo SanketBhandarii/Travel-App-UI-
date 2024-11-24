@@ -13,8 +13,8 @@ const _layout = () => {
             height: 70,
             paddingTop: 10,
             paddingHorizontal: 20,
-            borderTopWidth: 0, // No border on top
-            elevation: 0, // Remove shadow for Android
+            borderTopWidth: 0,
+            elevation: 0,
           },
           headerShown: false,
         }}
