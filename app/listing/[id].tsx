@@ -37,11 +37,7 @@ const Individual = () => {
           className="bg-cyan-500 w-12 h-12 items-center justify-center rounded-lg shadow-lg"
           activeOpacity={0.7}
           onPress={() => {
-            if (navigation.canGoBack()) {
-              navigation.goBack();
-            } else {
-              navigation.navigate("(tabs)");
-            }
+            navigation.navigate("(tabs)");
           }}
         >
           <MaterialCommunityIcons name="arrow-left" size={28} color="white" />

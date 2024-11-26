@@ -12,13 +12,13 @@ export default function RootLayout() {
       />
       <Stack
         screenOptions={{
-          animation: "fade",
+          animation: "ios_from_left",
           headerShown: false,
           animationDuration: 1,
-          // headerShown: false,
         }}
       >
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="listing/[id]" options={{ headerShown: false }} />
       </Stack>
     </>
   );

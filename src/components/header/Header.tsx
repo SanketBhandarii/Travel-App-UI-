@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
@@ -13,10 +13,10 @@ const Header = () => {
       }}
     >
       <TouchableOpacity
-        className="bg-cyan-500 w-12 h-12 items-center justify-center rounded-lg shadow-lg"
+        className="items-center justify-center rounded-lg shadow-lg"
         activeOpacity={0.7}
       >
-        <MaterialCommunityIcons name="arrow-left" size={28} color="white" />
+        <Image source={require("../../../assets/images/Tripzy.png")} style={{height:45, width:45, borderRadius:50}}/>
       </TouchableOpacity>
       <TouchableOpacity
         className="bg-red-400 w-12 h-12 items-center justify-center rounded-full shadow-lg"
