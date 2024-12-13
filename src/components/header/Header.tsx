@@ -1,6 +1,7 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import { Link } from "expo-router";
 
 const Header = () => {
   return (
@@ -16,14 +17,19 @@ const Header = () => {
         className="items-center justify-center rounded-lg shadow-lg"
         activeOpacity={0.7}
       >
-        <Image source={require("../../../assets/images/Tripzy.png")} style={{height:45, width:45, borderRadius:50}}/>
+        <Image
+          source={require("../../../assets/images/Tripzy.png")}
+          style={{ height: 45, width: 45, borderRadius: 50 }}
+        />
       </TouchableOpacity>
-      <TouchableOpacity
-        className="bg-red-400 w-12 h-12 items-center justify-center rounded-full shadow-lg"
-        activeOpacity={0.7}
-      >
-        <MaterialCommunityIcons name="account" size={28} color="white" />
-      </TouchableOpacity>
+      <Link href={"/profile"} asChild>
+        <TouchableOpacity
+          className="bg-red-400 w-12 h-12 items-center justify-center rounded-full shadow-lg"
+          activeOpacity={0.7}
+        >
+          <MaterialCommunityIcons name="account" size={28} color="white" />
+        </TouchableOpacity>
+      </Link>
     </View>
   );
 };

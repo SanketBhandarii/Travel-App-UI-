@@ -49,7 +49,7 @@ const Destination: React.FC<DestinationProps> = ({ fontType, dest }) => {
 
   return (
     <View className="mt-7 ml-7">
-      <Text style={{ fontFamily: fontType.bold }} className="text-3xl">
+      <Text style={{ fontFamily: fontType.semiBold }} className="text-2xl">
         Popular Destinations
       </Text>
       {reload ? (

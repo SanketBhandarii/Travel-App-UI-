@@ -1,6 +1,7 @@
 import { Stack } from "expo-router";
 import { StatusBar, Text } from "react-native";
 import "./../global.css";
+import React from "react";
 
 export default function RootLayout() {
   return (
@@ -12,7 +13,7 @@ export default function RootLayout() {
       />
       <Stack
         screenOptions={{
-          animation: "ios_from_left",
+          animation: "fade",
           headerShown: false,
           animationDuration: 1,
         }}
